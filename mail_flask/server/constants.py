@@ -1,0 +1,27 @@
+import pytz
+
+# LOCAL_TIMEZONE = pytz.timezone("Asia/Kolakata")
+VERSION = "1.4.68"
+USER_NAME = 'keerthan'
+PWD = "keerthan"
+SCUT = 30*60 #in seconds
+
+
+IS_DEVELOPMENT = True
+SEC_KEY = "b'_5#y2L2F4Q8"
+
+
+
+KNOWLEDGE_DB_HOST = ""
+KNOWLEDGE_DB_PORT = ""
+KNOWLEDGE_DB_USERNAME = ""
+KNOWLEDGE_DB_PASSWORD = ""
+KNOWLEDGE_DATABASE_NAME = ""
+
+
+SMS_CONTENT = ""
+
+SMS_GATEWAY = ""
+
+DASHBOARD_SERVICE = ""
+

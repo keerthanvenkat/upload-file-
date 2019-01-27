@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+< lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="/css/bootstrap.min.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/toastr.min.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/jquery-ui.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/custombox.min.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/icons.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/common.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/menu.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/theme_one.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/css/core.css" rel = 'stylesheet' type = 'text/css'>
+        <link href="/images/keerthan.ico" rel = 'shortcut icon' type = image/x-icon property="icon">
+    </head>
+    <body class = "fixed-left">
+        <div id = "wrapper">
+            {% include "header.html" %} {% block content %}
+            {% endblock %} {% include "footer.html" %}
+        </div>
+
+    </body>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/toastr.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/custombox.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+    {% block contentscript %}{% endblock %}
+</html>
