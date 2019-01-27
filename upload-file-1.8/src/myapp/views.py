@@ -9,6 +9,9 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
+from django.conf import settings
+from django.http import Http404
+import os
 
 from .models import Document
 from .forms import DocumentForm
@@ -38,6 +41,15 @@ def list(request):
 )
 
 def test_html(request):
-	f = open('/home/anil/Desktop/upload/src/myapp/templates/test.html')
-	content = f.read()
-	return HttpResponse(content)
+    f = open('/home/anil/Desktop/upload/src/myapp/templates/test.html')
+    content = f.read()
+    return HttpResponse(content)
+
+def download(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+            return response
+    raise Http404

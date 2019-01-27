@@ -66,4 +66,19 @@ class Remarks(models.Model):
         return self.mobile_number
 
 
+class UserSessions(models.Model):
+    session_token = models.CharField(primary_key=True, max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    last_accessed_time = models.DateTimeField()
+
+    def __str__(self):
+        return str(self.user)
+
+class MailDomain(models.Model):
+    email_domain = models.CharField(max_length=50)
+    email_status = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.email_domain
+
 
