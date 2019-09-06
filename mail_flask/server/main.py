@@ -2,11 +2,10 @@ import os
 import json
 import jinja2
 import datetime
-import flask
-from flask import Flask, session, send_from_directory, Response, render_template, request, redirect
+from flask import Flask, session, send_from_directory, Response, render_template, request
 from flask_login.login_manager import LoginManager,redirect
 from flask_login.utils import login_required, login_user, logout_user
-# from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 
 
 from server.model.usermodel import User
@@ -31,7 +30,8 @@ else:
 
 loginmanager = LoginManager()
 loginmanager.init_app(app)
-loginmanager.login_view = "/infolist/login/"
+loginmanager.login_view = "/login"
+
 
 ROOT_PATH = os.path.join(os.path.split(__file__)[0],"..")
 CSS_PATH = os.path.join(ROOT_PATH, "static", "css")
@@ -44,7 +44,7 @@ DOCS_PATH = os.path.join(ROOT_PATH, "templates", "docs")
 unauthtemplates = ["/login/login.html"]
 
 
-TEMPLATE_PATH = [("/", "login/login.html"),
+TEMPLATE_PATH = [("/", "/login/login.html"),
                  ("/infolist/login", "/login/login.html"),
                  ("/infolist/index", "/home/index.html"),
                  ("/infolist/mail-conf", "/mail-configuration-client/mail-configuration-client.html"),
@@ -75,24 +75,27 @@ def auth_render_template(pathname):
     output = render_template(pathname)
     return output
 
-# @loginmanager.login_user
-# def auth_render_template(pathname):
-#     output = render_template(pathname)
-#     return output
+@loginmanager.login_user
+def auth_render_template(pathname):
+    output = render_template(pathname)
+    return output
 
-
+# @login_manager.user_loader
 @loginmanager.user_loader
 def load_user(user_id):
     return User(user_id)
 
+@app.route('/login', methods=['GET', 'POST'])
 def do_login():
     if request.form.get("username")==USER_NAME and request.form.get('password')==PWD:
         user = User(USER_NAME)
         logout_user()
-        return redirect("/infolist/index.html")
-    return redirect("/infolist/login")
+        return redirect("/index.html")
+    return redirect("/login")
 
 
+@app.route("/logout")
+@login_required
 def do_logout():
     logout_user()
     return redirect("/infolist/login")
@@ -161,7 +164,7 @@ def runserver(port):
             app.add_url_rule(path[0], view_func = auth_render_template, methods = ['GET'],
             defaults = {'pathname': path[1]})
         else:
-            app.add_url_rule(path[0], view_func=render_my_template, methods=['GET'],
+            app.add_url_rule(path[0], view_func= render_my_template, methods=['GET'],
             defaults={'pathname': path[1]})
     api_urls_and_handlers = [("/", 'POST', do_login),
                  ("/infolist/get_clients", 'GET', get_client_list),

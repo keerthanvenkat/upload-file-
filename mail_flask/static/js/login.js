@@ -1,4 +1,4 @@
-//var Logbtn = $('#btn-login')
+////var Logbtn = $('#btn-login')
 //
 //function loginProcess(data){
 //    $.ajax({
@@ -14,8 +14,9 @@
 //    })
 //}
 //
-//$(document).ready(functon(){
-//    $('#btn-login').on('click',function(e){
+//$(document).ready(functon()
+//{
+//    $('#btn-login').on('click', function (e) {
 //        var data = {};
 //        data['username'] = $('#username').val();
 //        data['password'] = $('#password').val();
