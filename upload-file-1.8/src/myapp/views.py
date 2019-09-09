@@ -11,10 +11,13 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.conf import settings
 from django.http import Http404
+from myapp import logger
 import os
 
 from .models import Document
 from .forms import DocumentForm
+from .logger import *
+
 
 
 def list(request):
@@ -24,11 +27,13 @@ def list(request):
         if form.is_valid():
             newdoc = Document(docfile=request.FILES['docfile'])
             newdoc.save()
+            logger.info("successfully uploaded")
 
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('list'))
     else:
         form = DocumentForm()  # A empty, unbound form
+        logger.error("not uploaded something went wrong")
 
     # Load documents for the list page
     documents = Document.objects.all()
@@ -43,6 +48,7 @@ def list(request):
 def test_html(request):
     f = open('/home/anil/Desktop/upload/src/myapp/templates/test.html')
     content = f.read()
+    logger.info("success")
     return HttpResponse(content)
 
 def download(request, path):
@@ -51,5 +57,7 @@ def download(request, path):
         with open(file_path, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
             response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
+            logger.info("successfully downloaded")
             return response
+    logger.error("please verify again")
     raise Http404

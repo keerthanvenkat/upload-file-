@@ -34,5 +34,5 @@ urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/myapp/list/', permanent=False)),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
+# urlpatterns+static(settings.LOG_PATH, root=settings.log_root)
 #urlpatterns += staticfiles_urlpatterns()
