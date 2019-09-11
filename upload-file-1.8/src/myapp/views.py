@@ -12,11 +12,11 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.http import Http404
 from myapp import logger
-import os
 
 from .models import Document
 from .forms import DocumentForm
 from .logger import *
+from django.core import serializers
 
 
 
@@ -31,12 +31,15 @@ def list(request):
 
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('list'))
+
     else:
         form = DocumentForm()  # A empty, unbound form
-        logger.error("not uploaded something went wrong")
+        logger.info("form is loaded successfully")
 
     # Load documents for the list page
     documents = Document.objects.all()
+    data = serializers.serialize('json', documents)
+    logger.info(data)
 
     # Render list page with the documents and the form
     return render_to_response(
@@ -45,11 +48,10 @@ def list(request):
         context_instance=RequestContext(request)
 )
 
-def test_html(request):
-    f = open('/home/anil/Desktop/upload/src/myapp/templates/test.html')
-    content = f.read()
+def test(request):
+    content = {}
     logger.info("success")
-    return HttpResponse(content)
+    return render_to_response('test.html',context_instance=RequestContext(request))
 
 def download(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
@@ -61,3 +63,7 @@ def download(request, path):
             return response
     logger.error("please verify again")
     raise Http404
+def address(request):
+    documents = Document.objects.all()
+    context = {'documents': documents}
+    return render(request,'address.html',context)

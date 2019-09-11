@@ -1,10 +1,26 @@
-^(asctime)s - Error - C:\Users\Terralogic\Desktop\project\upload-file-\upload-file-1.8\src\myapp\views.py : list : 36 : not uploaded something went wrong
+^(asctime)s - Error - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 39 : not uploaded something went wrong
 
-^(asctime)s - Error - C:\Users\Terralogic\Desktop\project\upload-file-\upload-file-1.8\src\myapp\views.py : list : 36 : not uploaded something went wrong
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 28 : form is loaded successfully
 
-^(asctime)s - Error - C:\Users\Terralogic\Desktop\project\upload-file-\upload-file-1.8\src\myapp\views.py : list : 36 : not uploaded something went wrong
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 28 : form is loaded successfully
 
-^(asctime)s - Error - C:\Users\Terralogic\Desktop\project\upload-file-\upload-file-1.8\src\myapp\views.py : list : 36 : not uploaded something went wrong
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 28 : form is loaded successfully
 
-^(asctime)s - Error - C:\Users\Terralogic\Desktop\project\upload-file-\upload-file-1.8\src\myapp\views.py : list : 36 : not uploaded something went wrong
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 28 : form is loaded successfully
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 29 : form is loaded successfully
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 29 : [{"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2.py"}, "pk": 1}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2_ImDJJMi.py"}, "pk": 2}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/manage.py"}, "pk": 3}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/wsgi.py"}, "pk": 4}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/xl.ods"}, "pk": 5}]
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 27 : form is loaded successfully
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 27 : [{"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2.py"}, "pk": 1}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2_ImDJJMi.py"}, "pk": 2}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/manage.py"}, "pk": 3}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/wsgi.py"}, "pk": 4}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/xl.ods"}, "pk": 5}]
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 27 : form is loaded successfully
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 27 : [{"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2.py"}, "pk": 1}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2_ImDJJMi.py"}, "pk": 2}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/manage.py"}, "pk": 3}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/wsgi.py"}, "pk": 4}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/xl.ods"}, "pk": 5}]
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 40 : form is loaded successfully
+
+^(asctime)s - Info - C:\Users\Terralogic\Desktop\git_repo\upload-file-\upload-file-1.8\src\myapp\views.py : list : 45 : [{"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2.py"}, "pk": 1}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/anil2_ImDJJMi.py"}, "pk": 2}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/manage.py"}, "pk": 3}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/wsgi.py"}, "pk": 4}, {"model": "myapp.document", "fields": {"docfile": "documents/2018/06/10/xl.ods"}, "pk": 5}]
 
